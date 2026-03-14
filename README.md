@@ -90,9 +90,6 @@ Interactive charts make it easier to compare EV adoption across regions.
 
 # ⚙️ Running the Application
 
-Clone the repository and run the Streamlit app:
-
+> Clone this repo and run:
 ```bash
-git clone <repo-link>
-cd ev-adoption-forecast
 streamlit run app.py
