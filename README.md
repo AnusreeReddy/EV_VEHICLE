@@ -1,111 +1,80 @@
-🚗 EV Adoption Forecasting App
+# 🚗 EV Adoption Forecasting App
 
-An interactive web application built using Python and Streamlit to forecast Electric Vehicle (EV) adoption trends across selected U.S. counties using machine learning.
+An interactive web app built with **Python** and **Streamlit** to forecast Electric Vehicle (EV) adoption trends across selected U.S. counties.
 
-📌 Features
+---
 
-Forecasts future EV adoption trends using a Random Forest Regressor trained on historical EV registration data.
+# 📌 Features
 
-Allows users to select and compare up to three counties simultaneously.
+- Predicts future EV counts using **Random Forest Regressor** trained on historical data.
+- Users can select and compare up to **three counties** simultaneously.
+- Handles missing or insufficient data dynamically for smooth user experience.
+- Visualizes both **historical and forecasted trends** using clear comparative line charts.
 
-Automatically handles missing or insufficient data to maintain a smooth user experience.
+---
 
-Visualizes historical and predicted EV adoption trends using interactive comparative line charts.
+# 📊 Methodology
 
-📊 Dataset
+## Data Preprocessing
 
-Source: U.S. EV Registration Data
+- Cleaned and organized historical EV data.
+- Managed missing values and structured the dataset for modeling.
 
-Data Type: County-level EV population statistics
-
-Time Range: Historical EV counts across multiple years
-
-The dataset was cleaned and preprocessed before training the forecasting model.
-
-🧠 Methodology
-
-The forecasting pipeline consists of the following steps:
-
-1️⃣ Data Preprocessing
-
-Removed missing or inconsistent entries
-
-Organized EV counts by county and year
-
-2️⃣ Feature Engineering
+## Feature Engineering
 
 Generated statistical features to capture temporal patterns:
 
-Lag features
+- Lag features
+- Rolling means
+- Percent changes
+- Growth slope indicators
 
-Rolling means
+## Model Training
 
-Percentage change
+- Trained a **Random Forest Regressor** on processed data.
+- The model learns patterns in EV adoption growth across counties.
 
-Growth slope indicators
+## Forecast Generation
 
-These features help the model understand historical adoption trends.
+- Used the trained model to predict **future EV adoption trends**.
 
-3️⃣ Model Training
+---
 
-A Random Forest Regressor was trained on the engineered features to learn non-linear patterns in EV adoption trends.
-
-4️⃣ Forecast Generation
-
-The trained model predicts future EV adoption counts based on historical growth patterns.
-
-📈 Visualization
+# 📈 Visualization
 
 The Streamlit interface allows users to:
 
-Select counties for comparison
+- Select and compare **multiple counties**
+- View **historical EV growth**
+- Display **future forecasted trends**
+- Compare adoption patterns using **interactive line charts**
 
-Visualize historical EV growth
+---
 
-Display future forecasted adoption trends
+# 🛠 Tools & Technologies
 
-Interactive charts make it easier to compare EV adoption across regions.
+## Programming
+- Python
 
-🛠 Tools & Technologies
+## Libraries
+- Pandas  
+- Scikit-learn  
+- Streamlit  
+- Matplotlib  
 
-Programming: Python
+## Machine Learning
+- Random Forest Regressor
 
-Libraries:
+## Data Processing
+- Lag features  
+- Rolling statistics  
+- Trend-based transformations
 
-Pandas
+---
 
-Scikit-learn
+# 🔗 Try It Yourself
 
-Matplotlib
+Clone this repository and run the Streamlit application:
 
-Streamlit
-
-Machine Learning Model:
-
-Random Forest Regressor
-
-Feature Engineering Techniques:
-
-Lag features
-
-Rolling statistics
-
-Trend-based transformations
-
-⚙️ Running the Application
-
-Clone the repository and run the Streamlit app:
-
-git clone <repo-link>
-cd ev-adoption-forecast
+```bash
 streamlit run app.py
-
-The app will launch in your browser.
-
-🚀 Future Improvements
-
-Incorporate additional models such as ARIMA and LSTM for time-series comparison.
-
-Add hyperparameter tuning to improve prediction accuracy.
-
-Expand dataset coverage to include more geographic regions.
