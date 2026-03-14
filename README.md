@@ -1,42 +1,57 @@
 # 🚗 EV Adoption Forecasting App
 
-An interactive web app built with **Python** and **Streamlit** to forecast Electric Vehicle (EV) adoption trends across selected U.S. counties.
+An interactive web application built using Python and Streamlit to forecast Electric Vehicle (EV) adoption trends across selected U.S. counties using machine learning.
 
 ---
 
 # 📌 Features
 
-- Predicts future EV counts using **Random Forest Regressor** trained on historical data.
-- Users can select and compare up to **three counties** simultaneously.
-- Handles missing or insufficient data dynamically for smooth user experience.
-- Visualizes both **historical and forecasted trends** using clear comparative line charts.
+- Forecasts future EV adoption trends using a Random Forest Regressor trained on historical EV registration data.
+- Allows users to select and compare up to three counties simultaneously.
+- Automatically handles missing or insufficient data to maintain a smooth user experience.
+- Visualizes historical and predicted EV adoption trends using interactive comparative line charts.
 
 ---
 
-# 📊 Methodology
+# 📊 Dataset
 
-## Data Preprocessing
+**Source:** U.S. EV Registration Data  
 
-- Cleaned and organized historical EV data.
-- Managed missing values and structured the dataset for modeling.
+**Data Type:** County-level EV population statistics  
 
-## Feature Engineering
+**Time Range:** Historical EV counts across multiple years  
+
+The dataset was cleaned and preprocessed before training the forecasting model.
+
+---
+
+# 🧠 Methodology
+
+The forecasting pipeline consists of the following steps:
+
+## 1️⃣ Data Preprocessing
+
+- Removed missing or inconsistent entries  
+- Organized EV counts by county and year
+
+## 2️⃣ Feature Engineering
 
 Generated statistical features to capture temporal patterns:
 
-- Lag features
-- Rolling means
-- Percent changes
-- Growth slope indicators
+- Lag features  
+- Rolling means  
+- Percentage change  
+- Growth slope indicators  
 
-## Model Training
+These features help the model understand historical adoption trends.
 
-- Trained a **Random Forest Regressor** on processed data.
-- The model learns patterns in EV adoption growth across counties.
+## 3️⃣ Model Training
 
-## Forecast Generation
+A Random Forest Regressor was trained on the engineered features to learn non-linear patterns in EV adoption trends.
 
-- Used the trained model to predict **future EV adoption trends**.
+## 4️⃣ Forecast Generation
+
+The trained model predicts future EV adoption counts based on historical growth patterns.
 
 ---
 
@@ -44,10 +59,11 @@ Generated statistical features to capture temporal patterns:
 
 The Streamlit interface allows users to:
 
-- Select and compare **multiple counties**
-- View **historical EV growth**
-- Display **future forecasted trends**
-- Compare adoption patterns using **interactive line charts**
+- Select counties for comparison  
+- Visualize historical EV growth  
+- Display future forecasted adoption trends  
+
+Interactive charts make it easier to compare EV adoption across regions.
 
 ---
 
@@ -57,24 +73,26 @@ The Streamlit interface allows users to:
 - Python
 
 ## Libraries
-- Pandas  
-- Scikit-learn  
-- Streamlit  
-- Matplotlib  
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Streamlit
 
-## Machine Learning
+## Machine Learning Model
 - Random Forest Regressor
 
-## Data Processing
-- Lag features  
-- Rolling statistics  
+## Feature Engineering Techniques
+- Lag features
+- Rolling statistics
 - Trend-based transformations
 
 ---
 
-# 🔗 Try It Yourself
+# ⚙️ Running the Application
 
-Clone this repository and run the Streamlit application:
+Clone the repository and run the Streamlit app:
 
 ```bash
+git clone <repo-link>
+cd ev-adoption-forecast
 streamlit run app.py
